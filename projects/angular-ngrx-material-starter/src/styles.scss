@@ -31,9 +31,9 @@
 //  If you specify typography styles for the components you use elsewhere, you should delete this line.
 //  If you don't need the default component typographies but still want the hierarchy styles,
 //  you can delete this line and instead use:
-//    `@include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());`
-@include mat.all-legacy-component-typographies();
-@include mat.legacy-core();
+//    `@include mat.legacy-typography-hierarchy(mat.define-typography-config());`
+@include mat.all-component-typographies();
+@include mat.core();
 
 @import './themes/default-theme';
 @import './themes/light-theme';
@@ -65,21 +65,21 @@
 }
 
 .default-theme {
-  @include mat.all-legacy-component-themes($anms-theme);
+  @include mat.all-component-themes($anms-theme);
   @include custom-components-theme($anms-theme);
 }
 
 .light-theme {
-  @include mat.all-legacy-component-themes($anms-light-theme);
+  @include mat.all-component-themes($anms-light-theme);
   @include custom-components-theme($anms-light-theme);
 }
 
 .black-theme {
-  @include mat.all-legacy-component-themes($anms-black-theme);
+  @include mat.all-component-themes($anms-black-theme);
   @include custom-components-theme($anms-black-theme);
 }
 
 .nature-theme {
-  @include mat.all-legacy-component-themes($anms-nature-theme);
+  @include mat.all-component-themes($anms-nature-theme);
   @include custom-components-theme($anms-nature-theme);
 }

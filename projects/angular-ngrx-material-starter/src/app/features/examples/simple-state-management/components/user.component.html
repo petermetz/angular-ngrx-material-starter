@@ -10,6 +10,7 @@
     <div class="col-md-12 col-lg-6">
       <ng-container *ngIf="users$ | async as users">
         <mat-card
+          appearance="outlined"
           *ngFor="let user of users; trackBy: trackByUserId"
           [ngClass]="routeAnimationsElements"
         >

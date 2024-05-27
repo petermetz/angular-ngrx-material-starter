@@ -42,8 +42,8 @@
               <span>{{ 'anms.examples.todos.filter.active' | translate }}</span>
             </button>
           </mat-menu>
-          <mat-chip-list class="todos-filter-info d-none d-sm-block d-md-none d-lg-block">
-            <mat-chip [disabled]=true [ngPlural]="todos.length">
+          <mat-chip-listbox class="todos-filter-info d-none d-sm-block d-md-none d-lg-block">
+            <mat-chip-option [disabled]=true [ngPlural]="todos.length">
               {{ 'anms.examples.todos.filter.description' | translate }}
               <ng-template ngPluralCase="other">{{ todos.length }} {{ 'anms.examples.todos.filter.items' |
                 translate }}</ng-template>
@@ -51,10 +51,10 @@
                 'anms.examples.todos.filter.item' | translate }}</ng-template>
               <ng-template ngPluralCase="=0">{{ 'anms.examples.todos.filter.none' | translate }} {{
                 'anms.examples.todos.filter.items' | translate }}</ng-template>
-            </mat-chip>
-          </mat-chip-list>
+            </mat-chip-option>
+          </mat-chip-listbox>
         </h2>
-        <mat-card *ngFor="let todo of todos" class="todo" [ngClass]="routeAnimationsElements">
+        <mat-card appearance="outlined" *ngFor="let todo of todos" class="todo" [ngClass]="routeAnimationsElements">
           <mat-checkbox class="todo-done" [checked]="todo.done" (change)="onToggleTodo(todo)"></mat-checkbox>
           <span class="todo-label" [ngClass]="{ 'todo-label-done': todo.done }" (click)="onToggleTodo(todo)">
             &nbsp;{{todo.name}}&nbsp;

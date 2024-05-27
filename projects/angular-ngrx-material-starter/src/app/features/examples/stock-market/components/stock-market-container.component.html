@@ -22,7 +22,7 @@
       </div>
       <div class="col-md-6 col-lg-4 offset-lg-1">
         <mat-spinner *ngIf="stocks.loading"></mat-spinner>
-        <mat-card *ngIf="stocks.stock">
+        <mat-card appearance="outlined" *ngIf="stocks.stock">
           <mat-card-title>{{stocks.stock.symbol}} <span>{{stocks.stock.last}} {{stocks.stock.ccy}}</span></mat-card-title>
           <mat-card-subtitle>
             <p [ngClass]="{ negative: stocks.stock.changeNegative }">
