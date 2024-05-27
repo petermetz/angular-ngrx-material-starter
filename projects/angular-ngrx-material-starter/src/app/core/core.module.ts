@@ -131,7 +131,8 @@ export function httpLoaderFactory(http: HttpClient) {
     environment.production
       ? []
       : StoreDevtoolsModule.instrument({
-          name: 'Angular NgRx Material Starter'
+          name: 'Angular NgRx Material Starter',
+          connectInZone: true
         }),
 
     // 3rd party
