@@ -18,14 +18,14 @@ describe('BooksEffects', () => {
   describe('persistBooks', () => {
     const booksState: BookState = {
       entities: {
-        '1': {
+        a1: {
           author: 'Author',
           description: 'Description',
-          id: '1',
+          id: 'a1',
           title: 'Title'
         }
       },
-      ids: ['1']
+      ids: ['a1']
     };
     let localStorage: LocalStorageService;
     let store: Store<any>;

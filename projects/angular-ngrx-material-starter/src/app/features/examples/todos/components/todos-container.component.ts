@@ -36,16 +36,16 @@ export class TodosContainerComponent implements OnInit {
     private notificationService: NotificationService
   ) {}
 
+  get isAddTodoDisabled() {
+    return this.newTodo.length < 4;
+  }
+
   ngOnInit() {
     this.todos$ = this.store.pipe(select(selectTodos));
     this.filter$ = this.store.pipe(select(selectTodosFilter));
     this.removeDoneDisabled$ = this.store.pipe(
       select(selectRemoveDoneTodosDisabled)
     );
-  }
-
-  get isAddTodoDisabled() {
-    return this.newTodo.length < 4;
   }
 
   onNewTodoChange(event: any) {
