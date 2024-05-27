@@ -39,7 +39,7 @@
     "@angular-extensions/elements": "~12.6.0",
     "@angular-extensions/model": "^10.0.1",
     "@angular/animations": "^16.2.12",
-    "@angular/cdk": "^15.2.9",
+    "@angular/cdk": "^16.2.14",
     "@angular/common": "^16.2.12",
     "@angular/compiler": "^16.2.12",
     "@angular/core": "^16.2.12",
