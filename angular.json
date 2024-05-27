@@ -131,21 +131,43 @@
           }
         },
         "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
+          "builder": "@cypress/schematic:cypress",
           "options": {
-            "protractorConfig": "projects/angular-ngrx-material-starter/e2e/protractor.conf.js",
-            "devServerTarget": "angular-ngrx-material-starter:serve"
+            "devServerTarget": "angular-ngrx-material-starter:serve",
+            "watch": true,
+            "headless": false
           },
           "configurations": {
             "production": {
               "devServerTarget": "angular-ngrx-material-starter:serve:production"
             }
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "angular-ngrx-material-starter:serve",
+            "configFile": "projects/angular-ngrx-material-starter/cypress.config.js"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular-ngrx-material-starter:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "watch": true,
+            "headless": false,
+            "configFile": "projects/angular-ngrx-material-starter/cypress.config.js"
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "schematicCollections": ["@cypress/schematic", "@schematics/angular"]
   }
 }
