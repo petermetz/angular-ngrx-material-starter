@@ -1,4 +1,3 @@
-import { By } from '@angular/platform-browser';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
@@ -13,8 +12,8 @@ import { Form } from '../form.model';
 
 import { HarnessLoader } from '@angular/cdk/testing';
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
-import { MatLegacyInputHarness as MatInputHarness } from '@angular/material/legacy-input/testing';
-import { MatLegacyButtonHarness as MatButtonHarness } from '@angular/material/legacy-button/testing';
+import { MatInputHarness } from '@angular/material/input/testing';
+import { MatButtonHarness } from '@angular/material/button/testing';
 
 describe('FormComponent', () => {
   let store: MockStore;

@@ -32,7 +32,7 @@ describe('SettingsComponent', () => {
   let mockSelectSettings: MemoizedSelector<{}, SettingsState>;
 
   const getThemeSelectArrow = () =>
-    fixture.debugElement.queryAll(By.css('.mat-select-trigger'))[1];
+    fixture.debugElement.queryAll(By.css('.mat-mdc-select-trigger'))[1];
   const getSelectOptions = () =>
     fixture.debugElement.queryAll(By.css('mat-option'));
 

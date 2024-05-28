@@ -20,7 +20,7 @@ describe('BigInputActionComponent', () => {
   const getButton = () => fixture.debugElement.query(By.css('button'));
   const getIcon = () => fixture.debugElement.query(By.css('mat-icon'));
   const getLabel = () =>
-    fixture.debugElement.query(By.css('.mat-button-wrapper > span'));
+    fixture.debugElement.query(By.css('.mdc-button__label'));
 
   function createHostComponent(
     template: string
@@ -50,7 +50,7 @@ describe('BigInputActionComponent', () => {
     fixture = createHostComponent(template);
     expect(getButton().nativeElement.disabled).toBeFalsy();
     expect(getIcon()).toBeNull();
-    expect(getLabel()).toBeNull();
+    expect(getLabel().nativeElement.textContent).toBeFalsy();
   });
 
   it('should disable button if disabled property is set', () => {

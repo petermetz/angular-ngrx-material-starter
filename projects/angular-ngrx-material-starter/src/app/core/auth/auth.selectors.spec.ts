@@ -3,11 +3,13 @@ import { selectAuth, selectIsAuthenticated } from './auth.selectors';
 describe('Auth Selectors', () => {
   it('selectAuth', () => {
     const state = createAuthState();
+    selectAuth.clearResult();
     expect(selectAuth(state)).toBe(state.auth);
   });
 
   it('selectIsAuthenticated', () => {
     const state = createAuthState();
+    selectIsAuthenticated.clearResult();
     expect(selectIsAuthenticated(state)).toBe(false);
   });
 });
