@@ -55,10 +55,7 @@
           </mat-chip-listbox>
         </h2>
         <mat-card appearance="outlined" *ngFor="let todo of todos" class="todo" [ngClass]="routeAnimationsElements">
-          <mat-checkbox class="todo-done" [checked]="todo.done" (change)="onToggleTodo(todo)"></mat-checkbox>
-          <span class="todo-label" [ngClass]="{ 'todo-label-done': todo.done }" (click)="onToggleTodo(todo)">
-            &nbsp;{{todo.name}}&nbsp;
-          </span>
+          <mat-checkbox class="todo-done todo-label" [ngClass]="{ 'todo-label-done': todo.done }" [checked]="todo.done" (change)="onToggleTodo(todo)">&nbsp;{{todo.name}}&nbsp;</mat-checkbox>
         </mat-card>
         <br>
         <br>

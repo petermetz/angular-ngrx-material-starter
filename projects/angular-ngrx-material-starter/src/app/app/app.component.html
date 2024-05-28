@@ -67,11 +67,13 @@
           </a>
 
           <span *ngIf="language$ | async as language">
-            <mat-select [ngModel]="language" (selectionChange)="onLanguageSelect($event)">
-              <mat-option *ngFor="let l of languages" [value]="l">
-                {{ l.toUpperCase() }}
-              </mat-option>
-            </mat-select>
+            
+            <button mat-button [matMenuTriggerFor]="beforeMenu">{{language.toUpperCase()}}</button>
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+              @for (l of languages; track l) {
+                <button mat-menu-item (click)="onLanguageSelect(l)">{{l.toUpperCase()}}</button>
+              }
+            </mat-menu>
           </span>
         </mat-toolbar>
       </div>

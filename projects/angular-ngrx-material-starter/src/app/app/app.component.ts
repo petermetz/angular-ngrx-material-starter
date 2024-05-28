@@ -21,6 +21,7 @@ import {
   actionSettingsChangeAnimationsPageDisabled,
   actionSettingsChangeLanguage
 } from '../core/settings/settings.actions';
+import { Language } from '../core/settings/settings.model';
 
 @Component({
   selector: 'anms-root',
@@ -83,9 +84,9 @@ export class AppComponent implements OnInit {
     this.store.dispatch(authLogout());
   }
 
-  onLanguageSelect(event: MatSelectChange) {
+  onLanguageSelect(language: string) {
     this.store.dispatch(
-      actionSettingsChangeLanguage({ language: event.value })
+      actionSettingsChangeLanguage({ language: language as Language })
     );
   }
 }
