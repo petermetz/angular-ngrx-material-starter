@@ -22,10 +22,10 @@ export class AnimationsService {
       pageAnimations && elementsAnimations
         ? 'ALL'
         : pageAnimations
-        ? 'PAGE'
-        : elementsAnimations
-        ? 'ELEMENTS'
-        : 'NONE';
+          ? 'PAGE'
+          : elementsAnimations
+            ? 'ELEMENTS'
+            : 'NONE';
   }
 }
 
