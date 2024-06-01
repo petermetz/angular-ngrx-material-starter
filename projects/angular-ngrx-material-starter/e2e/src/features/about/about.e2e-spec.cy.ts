@@ -1,3 +1,5 @@
+/// <reference types="Cypress" />
+
 describe('About Page', () => {
   beforeEach(() => {
     cy.visit('/about'); // Navigate to the About page

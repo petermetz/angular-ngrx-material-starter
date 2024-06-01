@@ -2,14 +2,14 @@
   <div class="row">
     <div class="offset-md-2 col-md-8 entry">
       <anms-big-input rtl [placeholder]="'anms.examples.todos.input' | translate" [value]="newTodo" (keyup)="onNewTodoChange($event)"
-        (keyup.enter)="!isAddTodoDisabled && onAddTodo()" (keyup.escape)="onNewTodoClear()">
+        (keyup.enter)="!isAddTodoDisabled && onAddTodo()" (keyup.escape)="onNewTodoClear()" data-testid="examples-todo-input">
         <anms-big-input-action fontSet="fas" fontIcon="plus" faIcon="plus" color="accent"
           (action)="onAddTodo()" [disabled]="isAddTodoDisabled" [matTooltip]="'anms.examples.todos.tooltip.add' | translate"
-          matTooltipPosition="before">
+          matTooltipPosition="before" data-testid="examples-todo-button-add">
         </anms-big-input-action>
         <anms-big-input-action fontSet="fas" fontIcon="trash" faIcon="trash" color="warn"
           (action)="onRemoveDoneTodos()" [disabled]="(removeDoneDisabled$ | async) || false"
-          [matTooltip]="'anms.examples.todos.tooltip.remove' | translate" matTooltipPosition="after">
+          [matTooltip]="'anms.examples.todos.tooltip.remove' | translate" matTooltipPosition="after" data-testid="examples-todo-button-remove">
         </anms-big-input-action>
       </anms-big-input>
     </div>
@@ -54,7 +54,7 @@
             </mat-chip-option>
           </mat-chip-listbox>
         </h2>
-        <mat-card appearance="outlined" *ngFor="let todo of todos" class="todo" [ngClass]="routeAnimationsElements">
+        <mat-card appearance="outlined" *ngFor="let todo of todos" class="todo" [ngClass]="routeAnimationsElements" data-testid="examples-todo-list-card">
           <mat-checkbox class="todo-done todo-label" [ngClass]="{ 'todo-label-done': todo.done }" [checked]="todo.done" (change)="onToggleTodo(todo)">&nbsp;{{todo.name}}&nbsp;</mat-checkbox>
         </mat-card>
         <br>

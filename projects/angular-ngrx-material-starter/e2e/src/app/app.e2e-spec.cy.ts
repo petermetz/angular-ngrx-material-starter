@@ -1,4 +1,4 @@
-// cypress/integration/app.spec.js
+/// <reference types="Cypress" />
 
 describe('App', () => {
   beforeEach(() => {
