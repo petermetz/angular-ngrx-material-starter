@@ -87,7 +87,7 @@
     "all-contributors-cli": "^6.26.1",
     "assert": "^2.1.0",
     "codelyzer": "^6.0.2",
-    "cypress": "latest",
+    "cypress": "13.10.0",
     "eslint": "^9.3.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
