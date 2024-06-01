@@ -1,10 +1,11 @@
-<nav mat-tab-nav-bar [tabPanel]="tabPanel" class="d-none d-sm-flex">
+<nav mat-tab-nav-bar [tabPanel]="tabPanel" class="d-none d-sm-flex" data-testid="examples-component-nav-bar">
   <a mat-tab-link
      *ngFor="let e of examples"
      [routerLink]="e.link"
      routerLinkActive #rla="routerLinkActive"
      [active]="rla.isActive"
-     [disabled]="e.auth && !(isAuthenticated$ | async)">
+     [disabled]="e.auth && !(isAuthenticated$ | async)"
+     [attr.data-testid]="'examples-component-mat-tab-link-' + e.link">
     {{e.label | translate}}
   </a>
 </nav>

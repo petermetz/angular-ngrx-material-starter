@@ -4,12 +4,10 @@ describe('Todo Page', () => {
 
   const TEST_TODO_TEXT = "Running e2e tests! " + Math.random() * 1000;
   beforeEach(() => {
-    // Replace with the URL of your todos page
     cy.visit('/examples/todos');
   });
 
-  it('adds todo', () => {
-    // examples-todo-input
+  it('adds and removes todo items', () => {
     cy.get('[data-testid="examples-todo-input"]').within(() => {
       cy.get('input').type(TEST_TODO_TEXT);
     })

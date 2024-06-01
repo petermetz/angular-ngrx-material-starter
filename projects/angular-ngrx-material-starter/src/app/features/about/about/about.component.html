@@ -6,7 +6,7 @@
         <a [ngClass]="routeAnimationsElements" mat-raised-button class="actions-main" color="primary" routerLink="../feature-list">
           {{ 'anms.menu.features' | translate }}
         </a>
-        <a mat-raised-button class="actions-main" color="accent" routerLink="../examples" [ngClass]="routeAnimationsElements">
+        <a mat-raised-button class="actions-main" color="accent" routerLink="../examples" [ngClass]="routeAnimationsElements" data-testid="about-page-examples-button">
           {{ 'anms.menu.examples' | translate }}
         </a>
         <a mat-raised-button class="actions-main" color="warn" routerLink="../settings" [ngClass]="routeAnimationsElements">
