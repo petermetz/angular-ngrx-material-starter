@@ -19,8 +19,8 @@
         <h2>{{ 'anms.examples.crud.subtitle2' | translate }}</h2>
         <span class="d-flex justify-content-end">
           <span *ngIf="selectedBook$ | async as selectedBook">
-            <button mat-icon-button color="accent" *ngIf="!isEditing">
-              <fa-icon icon="edit" (click)="edit(selectedBook)" [matTooltip]="'anms.examples.crud.tooltip.edit' | translate"
+            <button mat-icon-button (click)="edit(selectedBook)" color="accent" *ngIf="!isEditing">
+              <fa-icon icon="edit" [matTooltip]="'anms.examples.crud.tooltip.edit' | translate"
                 matTooltipPosition="above">
               </fa-icon>
             </button>
