@@ -15,4 +15,13 @@ jobs:
       - run: npm run build
       - run: npm run build:prod
       - run: npm test
-      - run: npm run cypress:run
+      - name: E2E_FireFox
+        uses: cypress-io/github-action@v6.7.0
+        with:
+          browser: firefox
+          start: npm start
+      - name: E2E_Chrome
+        uses: cypress-io/github-action@v6.7.0
+        with:
+          browser: chrome
+          start: npm start
