@@ -1,0 +1,18 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4.1.6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.11.1'
+          node-version-file: 'package.json'
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
+      - run: npm ci
+      - run: npm run build
+      - run: npm run build:prod
+      - run: npm test
+      - run: npm run cypress:run
