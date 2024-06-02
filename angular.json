@@ -18,6 +18,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "sourceMap": true,
             "outputPath": "dist/angular-ngrx-material-starter",
             "index": "projects/angular-ngrx-material-starter/src/index.html",
             "main": "projects/angular-ngrx-material-starter/src/main.ts",
