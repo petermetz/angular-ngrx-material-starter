@@ -37,7 +37,6 @@ yarn.lock
 /libpeerconnection.log
 npm-debug.log
 testem.log
-tslint-to-eslint-config.log
 /typings
 
 # e2e
