@@ -44,7 +44,8 @@ describe('TodosComponent', () => {
 
   const getTodoItems = () => fixture.debugElement.queryAll(By.css('.todo'));
 
-  const getTodoItem = () => fixture.debugElement.query(By.css('.todo-label'));
+  const getTodoItemInputCheckbox = () =>
+    fixture.debugElement.query(By.css('.todo-label input[type=checkbox]'));
 
   const getAddTodoButton = async () => {
     const buttons = await loader.getAllHarnesses(
@@ -155,12 +156,13 @@ describe('TodosComponent', () => {
   });
 
   it('should dispatch toggle todo action', () => {
+    debugger;
     mockSelectTodos.setResult([{ id: '1', name: 'test 1', done: true }]);
     store.refreshState();
     fixture.detectChanges();
     dispatchSpy.calls.reset();
 
-    getTodoItem().nativeElement.click();
+    getTodoItemInputCheckbox().nativeElement.click();
     fixture.detectChanges();
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
