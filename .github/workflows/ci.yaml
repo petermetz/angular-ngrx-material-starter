@@ -1,11 +1,11 @@
 name: CI
 on: [push, pull_request]
 jobs:
-  test:
+  test_unit:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4.1.6
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4.0.2
         with:
           node-version: '20.11.1'
           node-version-file: 'package.json'
@@ -15,13 +15,24 @@ jobs:
       - run: npm run build
       - run: npm run build:prod
       - run: npm test
-      - name: E2E_FireFox
+  test_e2e:
+    runs-on: ubuntu-24.04
+    concurrency: 2
+    container:
+      image: cypress/browsers:node-20.13.1-chrome-125.0.6422.60-1-ff-126.0-edge-125.0.2535.51-1
+      options: --user 1001
+    strategy:
+      matrix:
+        browser: ['firefox', 'chrome']
+    name: E2E_${{ matrix.browser }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.6
+
+      - run: npm ci --legacy-peer-deps
+
+      - name: Cypress_Run_${{matrix.browser}}
         uses: cypress-io/github-action@v6.7.0
         with:
-          browser: firefox
           start: npm start
-      - name: E2E_Chrome
-        uses: cypress-io/github-action@v6.7.0
-        with:
-          browser: chrome
-          start: npm start
+          browser: ${{matrix.browser}}
