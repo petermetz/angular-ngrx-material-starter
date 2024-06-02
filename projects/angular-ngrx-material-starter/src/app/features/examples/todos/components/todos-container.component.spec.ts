@@ -156,7 +156,6 @@ describe('TodosComponent', () => {
   });
 
   it('should dispatch toggle todo action', () => {
-    debugger;
     mockSelectTodos.setResult([{ id: '1', name: 'test 1', done: true }]);
     store.refreshState();
     fixture.detectChanges();
