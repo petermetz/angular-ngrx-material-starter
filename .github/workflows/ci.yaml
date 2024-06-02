@@ -29,10 +29,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.6
 
-      - run: npm ci --legacy-peer-deps
-
       - name: Cypress_Run_${{matrix.browser}}
         uses: cypress-io/github-action@v6.7.0
         with:
           start: npm start
+          install-command: npm ci --legacy-peer-deps
           browser: ${{matrix.browser}}
